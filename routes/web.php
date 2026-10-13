@@ -75,3 +75,17 @@ Route::permanentRedirect('/katalog-lama', '/info');
 Route::fallback(function () {
 return response('Maaf, halaman yang Anda cari tidak tersedia.', 404);
 });
+
+use App\Http\Controllers\MahasiswaController;
+
+// a. Profil
+Route::get('/profil', [MahasiswaController::class, 'profil'])
+    ->name('mahasiswa.profil');
+
+// b. Daftar mahasiswa
+Route::get('/mahasiswa', [MahasiswaController::class, 'daftar'])
+    ->name('mahasiswa.daftar');
+
+// c. Detail berdasarkan NIM
+Route::get('/mahasiswa/{nim}', [MahasiswaController::class, 'detail'])
+    ->name('mahasiswa.detail');
