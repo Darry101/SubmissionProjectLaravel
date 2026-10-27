@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('dosens', function (Blueprint $table) {
         $table->string('no_hp', 15)->nullable()->after('email');
-    });
+        });
     }
 
     /**
